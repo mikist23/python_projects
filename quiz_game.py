@@ -1,1 +1,14 @@
-print("Welcome to the Game! ")
+print("Welcome to the Game! ") 
+
+playing = input("Do you want to play the game! ")
+
+if playing != "yes":
+    quit()
+
+print("Let's play the Game! ")
+
+answer = input("What does CPU mean in computig ? ") 
+if answer == "central processing unit":
+    print("Correct! ")
+else:
+    print("Incorrect! ")       
