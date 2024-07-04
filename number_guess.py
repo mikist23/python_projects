@@ -31,6 +31,9 @@ while True:
         print("You got it !!") 
         break
     else:
-        print("Wrong!!!!")     
+        if user_num > random_number:
+            print("Youre above the number !") 
+        else:
+            print('Youre below the number !')      
 
 print("You got it after ", guesses, "guesses")
