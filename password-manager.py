@@ -15,8 +15,7 @@ def load_key():
      return key
 
 
-master_pwd = input("Enter your master password? ")
-key = load_key() + master_pwd.encode()
+key = load_key() 
 fer = Fernet(key)
 
 
@@ -25,7 +24,7 @@ def add():
      pwd = input("Enter your password? ")
 
      with open("password.txt", "a") as f:
-          f.write(name + "|" + fer.encrypt(pwd.encode()) + "\n")
+          f.write(name + "|" + fer.encrypt(pwd.encode()).decode() + "\n")
 
 def view():
      with open("password.txt", "r") as f:
@@ -34,7 +33,7 @@ def view():
                if "|" in data:
                         try:
                           user, passw = data.split("|")
-                          print("User: ", user, "Password: ", passw)
+                          print("User: ", user, "| Password: ", fer.dencrypt(passw.encode()).decode())
                         except ValueError:
                          print(f"Skipping malformed line: {data}")
                 
