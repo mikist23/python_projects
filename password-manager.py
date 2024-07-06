@@ -1,5 +1,23 @@
+from cryptography.fernet import Fernet
 print("Welcome to the game!! ")
+
+
+
+'''def write_key():
+     key = Fernet.generate_key()
+     with open("key.key","wb") as key_file:
+          key_file.write(key)'''
+
+def load_key():
+     file = open("key.key", "rb")
+     key = file.read()
+     file.close()
+     return key
+
+
 master_pwd = input("Enter your master password? ")
+key = load_key() + master_pwd.encode()
+fer = Fernet(key)
 
 
 def add():
@@ -7,7 +25,7 @@ def add():
      pwd = input("Enter your password? ")
 
      with open("password.txt", "a") as f:
-          f.write(name + "|" + pwd + "\n")
+          f.write(name + "|" + fer.encrypt(pwd.encode()) + "\n")
 
 def view():
      with open("password.txt", "r") as f:
@@ -29,7 +47,7 @@ while True:
      if mode == "view":
           view()
 
-     elif mode == add():
+     elif mode == "add":
           add()
 
      else:
