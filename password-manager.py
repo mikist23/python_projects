@@ -7,11 +7,19 @@ def add():
      pwd = input("Enter your password? ")
 
      with open("password.txt", "a") as f:
-          f.write(name + "|" + pwd)
+          f.write(name + "|" + pwd + "\n")
 
 def view():
-     pass
-
+     with open("password.txt", "r") as f:
+          for line in f.readlines():
+               data = line.rstrip()
+               if "|" in data:
+                        try:
+                          user, passw = data.split("|")
+                          print("User: ", user, "Password: ", passw)
+                        except ValueError:
+                         print(f"Skipping malformed line: {data}")
+                
 while True:
      mode = input("Do you want to view or add password (view,add) or q to quit? ").lower()
 
