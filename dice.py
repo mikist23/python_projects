@@ -45,3 +45,6 @@ while max(player_scores) <max_score:
     player_scores[player_index] += current_score
     print("Your total score is: ", player_scores[player_index])
 
+max_score = max(player_scores)
+winning_index = player_scores.index(max_score)
+print("Player number ", winning_index +1, "is the winner with a score of ",max_score)
