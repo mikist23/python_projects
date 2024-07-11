@@ -86,7 +86,7 @@ def get_number_of_lines():
         lines = input("Enter A NUMBER OF LINES YOU WANT TO BEET ON (1-"+ str(MAX_LINES) + ")? ")
         if lines.isdigit():
             lines = int(lines)
-            if 1 <= lines <= MAX_LINES:
+            if  1 <= lines <= MAX_LINES:
                 break
             else:
                 print("Enter a valid number of lines")
@@ -102,7 +102,7 @@ def get_bet():
         amount = input("Enter ammount you want to bet on each line: $")
         if amount.isdigit():
             amount = int(amount)
-            if MIN_BET <= amount <= MAX_BET:
+            if  MIN_BET <= amount <= MAX_BET:
                 break
             else:
                 print(f"Amount must be between ${MIN_BET} - ${MAX_BET}")
