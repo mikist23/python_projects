@@ -22,14 +22,17 @@ def get_number_of_racers():
 
 def create_turtles(color):
     turtles = []
+    spacingx = WIDTH // (len(colors)+1)
     for i , color in enumerate(color):
         racer = turtle.Turtle()
         racer.color(color)
         racer.shape("turtle")
         racer.left(90)
         racer.penup()
+        racer.setpos(-WIDTH//2 + (i+1) * spacingx, -HEIGHT // 2 + 20 )
         racer.pendown()
         turtles.append(racer)
+    return turtles    
 
 
 
@@ -42,4 +45,5 @@ racers = get_number_of_racers()
 init_turtle()
 random.shuffle(COLORS)
 colors = COLORS[:racers]
+print(colors)
 create_turtles(colors)
