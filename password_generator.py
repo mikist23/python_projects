@@ -12,7 +12,7 @@ def generate_password(min_length, numbers = True, special_characters = True):
     if numbers:
         characters += digits
     if special_characters:
-        characters == special   
+        characters += special   
 
     pwd = ""
     meets_criteria = False
@@ -39,9 +39,7 @@ def generate_password(min_length, numbers = True, special_characters = True):
 
                   
 min_length = int(input("Enter the minimum length: "))
-    
-
-
-
-pwd = generate_password(10) 
-print(pwd)
+has_number = input("Do you want to include a number (y/n): ").lower() == "y"
+has_special = input("Do you want to have special characters (y/n): ").lower() == "y"
+pwd = generate_password(min_length ,has_number , has_special)
+print("The generated password is : "+pwd)
