@@ -20,6 +20,20 @@ def get_number_of_racers():
         else:
             print("Number not in range !!! Try again")
 
+def race(colors):
+    turtles = create_turtles(colors)
+
+    while True:
+        for racer in turtles:
+            distance = random.randrange(1,20)
+            racer.forward(distance)
+
+            x,y = racer.pos()
+            if y >= HEIGHT // 2 - 10:
+                return colors[turtles.index(racer)]
+
+
+
 def create_turtles(color):
     turtles = []
     spacingx = WIDTH // (len(colors)+1)
@@ -46,4 +60,4 @@ init_turtle()
 random.shuffle(COLORS)
 colors = COLORS[:racers]
 print(colors)
-create_turtles(colors)
+race(colors)
