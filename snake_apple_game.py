@@ -1,5 +1,6 @@
 import pygame
 import time
+from pygame.locals import *
 
 
 if __name__ == "__main__":
@@ -9,4 +10,11 @@ if __name__ == "__main__":
     surface.fill((255,255,255))
     pygame.display.flip()
 
-    time.sleep(5)
+    running = True
+
+    while running:
+        for event in pygame.event.get():
+            if event.type == KEYDOWN:
+                pass
+            elif event.type == QUIT:
+                running = False
