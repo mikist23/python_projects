@@ -37,8 +37,27 @@ class Game:
         self.snake.draw()
 
 
-    def run():
-        pass
+    def run(self):
+        running =True
+
+        while running:
+            for event in pygame.event.get():
+                if event.type == KEYDOWN:
+                    if event.key == K_ESCAPE:
+                        running = False
+                    if event.key == K_UP:
+                        self.snake.move_up()
+                    if event.key == K_DOWN:
+                        self.snake.move_down()
+                    if event.key == K_LEFT:
+                        self.snake.move_left
+                    if event.key == K_RIGHT:
+                        self.snake.move_right
+
+                elif event.type == QUIT:
+                    running = False
+            
+         
           
 
         
@@ -54,14 +73,11 @@ def draw_block():
 
 
 if __name__ == "__main__":
+    game = Game()
+    game.run()
     
 
     
-    surface.fill((110,110,5))
-    
-    block_x = 100
-    block_y = 100
-    surface.blit(block, (block_x,block_y))
 
 
 
@@ -71,23 +87,4 @@ if __name__ == "__main__":
 
     running = True
 
-    while running:
-        for event in pygame.event.get():
-            if event.type == KEYDOWN:
-                if event.key == K_ESCAPE:
-                    running = False
-                if event.key == K_UP:
-                    block_y -= 10
-                    draw_block()
-                if event.key == K_DOWN:
-                    block_y += 10
-                    draw_block()
-                if event.key == K_LEFT:
-                    block_x -= 10
-                    draw_block()
-                if event.key == K_RIGHT:
-                    block_x += 10
-                    draw_block()
-
-            elif event.type == QUIT:
-                running = False
+    
