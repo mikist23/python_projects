@@ -15,6 +15,19 @@ class Snake:
         pygame.display.flip()
 
 
+class Game:
+    def __init__(self):
+        pygame.init()
+        self.surface = pygame.display.set_mode((1000, 500))
+        self.surface.fill((110,110,5))
+        self.snake = Snake(self.surface)
+        self.snake.draw()
+
+
+    def run():
+        pass
+          
+
         
 
 
@@ -28,9 +41,9 @@ def draw_block():
 
 
 if __name__ == "__main__":
-    pygame.init()
+    
 
-    surface = pygame.display.set_mode((1000, 500))
+    
     surface.fill((110,110,5))
     
     block_x = 100
