@@ -2,6 +2,15 @@ import pygame
 import time
 from pygame.locals import *
 
+class Snake:
+    def __init__(self, parent_screen):
+        self.parent_screen = parent_screen
+        self.block  = pygame.image.load("resources/block.jpg").convert()
+        self.x =100
+        self.y =100
+        
+
+
 
 def draw_block():
     surface.fill((110,110,5))
