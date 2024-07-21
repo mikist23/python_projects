@@ -10,8 +10,8 @@ class Snake:
         self.y =100
 
     def draw(self):
-        self.surface.fill((110,110,5))
-        self.parent_screen.bilt(self.block, (self.x,self.y))
+        self.parent_screen.fill((110,110,5))
+        self.parent_screen.blit(self.block, (self.x,self.y))
         pygame.display.flip()
 
     def move_left(self):
@@ -50,26 +50,13 @@ class Game:
                     if event.key == K_DOWN:
                         self.snake.move_down()
                     if event.key == K_LEFT:
-                        self.snake.move_left
+                        self.snake.move_left()
                     if event.key == K_RIGHT:
-                        self.snake.move_right
+                        self.snake.move_right()
 
                 elif event.type == QUIT:
                     running = False
-            
-         
-          
-
-        
-
-
-
-def draw_block():
-    surface.fill((110,110,5))
     
-    surface.blit(block, (block_x,block_y))
-    pygame.display.flip()
-
 
 
 if __name__ == "__main__":
@@ -77,14 +64,5 @@ if __name__ == "__main__":
     game.run()
     
 
-    
-
-
-
-
-    pygame.display.flip()
-
-
-    running = True
 
     
