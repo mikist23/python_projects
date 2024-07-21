@@ -9,18 +9,18 @@ class ImageToPDFConverter:
         self.output_pdf_name = tk.StringVar()
         self.selected_images_listbox = tk.Listbox(root,selectmode=tk.MULTIPLE)
 
-        self.initialize_Ui()
+        self.initialize_ui()
 
     def initialize_ui(self):
-        title_label = tk.label(self.root,text="Image to PDF Converter", font=("Halvetica",16,"bold"))
+        title_label = tk.Label(self.root,text="Image to PDF Converter", font=("Halvetica",16,"bold"))
         title_label.pack(pady=10)
 
-    def main():
-        root =tk.Tk()
-        root.title("Image To PDF")
-        converter = ImageToPDFConverter()
-        root.geometry("400x400")
-        root.mainloop()
+def main():
+    root =tk.Tk()
+    root.title("Image To PDF")
+    converter = ImageToPDFConverter(root)
+    root.geometry("400x400")
+    root.mainloop()
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
