@@ -29,8 +29,18 @@ class ImageToPDFConverter:
         convert_button = tk.Button(self.root, text = "Convert to PDF", command= self.convert_images_to_pdf)
         convert_button.pack(pady =(20,40))
 
-    def select_images():
-        pass
+    def select_images(self):
+        self.image_path = filedialog.askopenfilenames(title="Select Images", filetypes=[("Image files","*.png;*.jpg;*jpeg")])
+        self.update_selectd_images_listbox()
+
+    def update_selectd_images_listbox(self):
+        self.selected_images_listbox.delete(0,tk.END)
+
+
+        for image_path in self.image_paths:
+            _, image_path = os.path.split(image_path)
+            self.selected_images_listbox.insert(tk.END,image_path)
+        
 
 
     def convert_images_to_pdf(self):
