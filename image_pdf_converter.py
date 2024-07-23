@@ -44,7 +44,8 @@ class ImageToPDFConverter:
 
 
     def convert_images_to_pdf(self):
-        pass
+        if not self.image_paths:
+            return
 
 
 def main():
