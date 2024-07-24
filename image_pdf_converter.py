@@ -63,6 +63,9 @@ class ImageToPDFConverter:
 
             x_centered = (612 - new_width) / 2
             y_centered = (792 - new_height) / 2
+
+            pdf.setFillColor(255,255,255)
+            pdf.rect(0,0,612,792,fill=True)
             
 
 
