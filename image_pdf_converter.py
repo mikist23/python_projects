@@ -66,7 +66,11 @@ class ImageToPDFConverter:
 
             pdf.setFillColor(255,255,255)
             pdf.rect(0,0,612,792,fill=True)
-            
+
+            pdf.drawInlineImage(img, x_centered, y_centered, width = new_width, height = new_height)
+            pdf.showPage()
+
+            pdf.save()
 
 
 
