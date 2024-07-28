@@ -18,6 +18,12 @@ def startBot(username, password, url):
       # username by inspecting on username input
     driver.find_element_by_name(
     "id/class/name of username").send_keys(username)
+
+    # find the password by inspecting on password input
+    driver.find_element_by_name(
+    "id/class/name of password").send_keys(password)
+     
+  
      
 
     
