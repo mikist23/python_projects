@@ -7,6 +7,12 @@ import os
 def startBot(username, password, url):
     
     path = "C:\\Users\\hp\\Downloads\\chromedriver"
+     # giving the path of chromedriver to selenium webdriver
+    driver = webdriver.Chrome(path)
+     
+     # opening the website  in chrome.
+    driver.get(url)
+    
      
 
  
