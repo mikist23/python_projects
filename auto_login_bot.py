@@ -22,6 +22,10 @@ def startBot(username, password, url):
     # find the password by inspecting on password input
     driver.find_element_by_name(
     "id/class/name of password").send_keys(password)
+    
+    # click on submit
+    driver.find_element_by_css_selector(
+    "id/class/name/css selector of login button").click()
      
   
      
