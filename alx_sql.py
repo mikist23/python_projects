@@ -43,3 +43,10 @@ cursor.execute("""
 """)
 
 
+
+# Insert a new record
+def insert_student(name, age, major):
+    sql = "INSERT INTO Students (Name, Age, Major) VALUES (%s, %s, %s)"
+    val = (name, age, major)
+    cursor.execute(sql, val)
+    conn.commit()
