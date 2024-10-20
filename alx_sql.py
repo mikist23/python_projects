@@ -33,3 +33,13 @@ cursor.execute("CREATE DATABASE IF NOT EXISTS student_db")
 cursor.execute("USE student_db")
 
 
+# Create a new table
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS Students(
+        StudentID INT AUTO_INCREMENT PRIMARY KEY,
+        Name VARCHAR(255) NOT NULL,
+        Age INT NOT NULL,
+        Major VARCHAR(255) NOT NULL   )
+""")
+
+
