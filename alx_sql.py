@@ -50,3 +50,12 @@ def insert_student(name, age, major):
     val = (name, age, major)
     cursor.execute(sql, val)
     conn.commit()
+
+# 21
+# Read all records
+def read_students():
+    cursor.execute("SELECT * FROM Students")
+    result = cursor.fetchall()
+    for row in result:
+        print(row)
+
