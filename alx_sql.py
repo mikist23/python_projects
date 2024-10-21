@@ -65,3 +65,12 @@ def update_student(student_id, name, age, major):
     val = (name, age, major, student_id)
     cursor.execute(sql, val)
     conn.commit()
+
+# Delete a record
+def delete_student(student_id):
+    sql = "DELETE FROM Students WHERE StudentID = %s"
+    val = (student_id,)
+    cursor.execute(sql, val)
+    conn.commit()
+
+
