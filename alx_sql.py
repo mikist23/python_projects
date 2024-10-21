@@ -59,3 +59,9 @@ def read_students():
     for row in result:
         print(row)
 
+# Update a record
+def update_student(student_id, name, age, major):
+    sql = "UPDATE Students SET Name = %s, Age = %s, Major = %s WHERE StudentID = %s"
+    val = (name, age, major, student_id)
+    cursor.execute(sql, val)
+    conn.commit()
